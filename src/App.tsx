@@ -47,6 +47,7 @@ const squishySteps: Step[] = [
   { text: '아이슬라임 베이스를 가져와요!', hint: '말랑말랑 준비 완료', image: '/assets/craft/slime-base.png' },
   { text: '액티를 넣어 슬라임을 만들어요!', hint: '쭉쭉 늘어나라!', image: '/assets/craft/activator.png' },
   { text: '스팽글 하나를 골라주세요!', hint: '반짝이는 색은 뭘까?', image: '/assets/craft/sequins-all.png' },
+  { text: '행운의 거북이를 쏙 넣어요!', hint: '좋은 일이 생길 거예요!', image: '/assets/craft/lucky-turtle.png' },
   { text: '투명공을 가져와요!', hint: '동글동글 투명공 등장', image: '/assets/craft/clear-ball.png' },
   { text: '투명공을 벌려 내용물을 넣어요!', hint: '슬라임을 쏙쏙!', image: '/assets/craft/fill-ball.png' },
   { text: '본드로 마개를 닫아요!', hint: '새지 않게 꼼꼼히', image: '/assets/craft/seal-ball.png' },
@@ -630,7 +631,7 @@ function KeycapVisual({ selected, step }: { selected: Part[]; step: number }) {
 
 function SquishyVisual({ sparkle, step }: { sparkle: (typeof sparkles)[number] | null; step: number }) {
   const images = squishySteps.map((item) => item.image)
-  images[6] = sparkle?.image ?? '/assets/craft/squishy-purple.png'
+  images[7] = sparkle?.image ?? '/assets/craft/squishy-purple.png'
   return (
     <div className="relative flex h-56 items-center justify-center overflow-hidden sm:h-72">
       {images.slice(0, step + 1).map((image, index) => (
@@ -649,7 +650,7 @@ function SquishyVisual({ sparkle, step }: { sparkle: (typeof sparkles)[number] |
             className="absolute h-44 w-44 object-contain sm:h-60 sm:w-60"
           />
         ))}
-      {step === 6 && <Confetti recycle={false} numberOfPieces={180} />}
+      {step === squishySteps.length - 1 && <Confetti recycle={false} numberOfPieces={180} />}
     </div>
   )
 }
