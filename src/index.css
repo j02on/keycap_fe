@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Gaegu', cursive;
+  color: #2a2a38;
+  background: #8bd7ff;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+.crayon-bg {
+  background-color: #8bd7ff;
+  background-image:
+    radial-gradient(circle at 18% 16%, rgba(255,255,255,.65) 0 3%, transparent 3.2%),
+    radial-gradient(circle at 80% 24%, rgba(255,255,255,.55) 0 4%, transparent 4.2%),
+    repeating-linear-gradient(8deg, rgba(255,255,255,.1) 0 2px, transparent 2px 8px);
+}
+
+.comic-border {
+  border: 4px solid #2a2a38;
+}
+
+.speech {
+  position: relative;
+}
+
+.speech::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 44px;
+  width: 28px;
+  height: 28px;
+  background: inherit;
+  border-right: 4px solid #2a2a38;
+  border-bottom: 4px solid #2a2a38;
+  transform: rotate(45deg);
+}
+
+.title-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: .08em .14em .18em;
+  font-size: clamp(4.2rem, 11vw, 7.6rem);
+  font-weight: 700;
+  line-height: .85;
+  letter-spacing: -.16em;
+  filter: drop-shadow(0 7px 0 rgba(42, 42, 56, .15));
+}
+
+.title-letter,
+.title-bang {
+  display: inline-block;
+  -webkit-text-stroke: .055em #07509b;
+  paint-order: stroke fill;
+  text-shadow:
+    .035em .035em 0 #07509b,
+    .065em .07em 0 #75b649;
+}
+
+.title-bang {
+  margin-left: .08em;
+  color: #6bbd45;
+  font-size: .82em;
+  letter-spacing: 0;
+}
+
+.doodle {
+  position: absolute;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  opacity: .5;
+  pointer-events: none;
+  filter: saturate(.9);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.photo-frame-shinchan,
+.photo-frame-guchipachi {
+  border: clamp(10px, 2vw, 22px) solid #07509b;
+  box-shadow: inset 0 0 0 clamp(7px, 1.3vw, 14px) #f04444;
+}
+
+.photo-frame-shinchan::before,
+.photo-frame-guchipachi::before,
+.photo-frame-shinchan::after,
+.photo-frame-guchipachi::after {
+  position: absolute;
+  color: #ffe34f;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  content: '☆';
+  text-shadow: 3px 3px 0 #07509b;
+}
+
+.photo-frame-shinchan::before,
+.photo-frame-guchipachi::before {
+  left: 4%;
+  top: 14%;
+}
+
+.photo-frame-shinchan::after,
+.photo-frame-guchipachi::after {
+  right: 5%;
+  top: 26%;
+  content: '♡';
+}
+
+.photo-frame-shinchan > div,
+.photo-frame-guchipachi > div {
+  background: #ffe34f;
+  border-bottom: 4px solid #07509b;
+}
+
+.photo-frame-guchipachi {
+  box-shadow: inset 0 0 0 clamp(7px, 1.3vw, 14px) #a8d400;
+}
+
+.photo-frame-guchipachi > div {
+  background: #8bd7ff;
+}
